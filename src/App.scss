@@ -1,0 +1,181 @@
+@import './style/color.scss';
+
+.App {
+  text-align: center;
+
+  button:focus {
+    outline: 0;
+  }
+
+  // navigation link
+  .navigation-link {
+    color: $black;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 0 1rem;
+    border: 0;
+    background: none;
+
+    &.navigation-breadcrumb {
+      color: $silverChalice;
+    }
+  }
+
+  // button
+  .cta-button--primary {
+    background-color: $balticSea;
+    color: $white;
+    font-size: 1.2rem;
+    font-family: 'Verdana';
+    letter-spacing: 0.1rem;
+    border: 0;
+    height: 5rem;
+    line-height: 5rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    transition: opacity .25s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &[disabled] {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+
+  .cta-button--primary--inverse {
+    @extend .cta-button--primary;
+    background: $white;
+    color: $black;
+    border: solid 1px;
+    transition: all .25s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      background: $boulder;
+      border-color: $boulder;
+      color: $white;
+    }
+  }
+
+  .cta-button--primary--condensed {
+    @extend .cta-button--primary;
+
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    min-width: 15rem;
+  }
+
+  .cta-button--primary-alt--condensed {
+    @extend .cta-button--primary--condensed;
+
+    background-color: $abbey;
+    color: $white;
+  }
+
+  .cta-button--secondary {
+    background: $alto;
+    color: $boulder;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 0;
+    text-align: center;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity .25s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .cta-button--link {
+    color: $black;
+    border-bottom: solid 0.1rem;
+    transition: opacity .25s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .cta-button--remove {
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    border:none;
+    background: none;
+    opacity: 0.6;
+    transition: opacity .25s ease-in-out;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 1.3rem;
+      height: 3rem;
+      width: 0.2rem;
+      background-color: $silverChalice;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .cta-button--remove--condensed {
+    @extend .cta-button--remove;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    &:before,
+    &:after {
+      height: 1.5rem;
+      left: 0.6rem;
+    }
+  }
+
+  // typography
+  .type-price {
+    font-family: 'Georgia';
+  }
+
+  .type-normal {
+    font-weight: normal;
+  }
+
+  .type-bold {
+    font-weight: bold;
+  }
+
+  .type-font-size-10 {
+    font-size: 1rem;
+  }
+
+  .type-font-size-12 {
+    font-size: 1.2rem;
+  }
+
+  .type-font-size-14 {
+    font-size: 1.4rem;
+  }
+
+  .type-font-size-16 {
+    font-size: 1.6rem;
+  }
+}

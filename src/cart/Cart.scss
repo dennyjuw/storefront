@@ -1,0 +1,58 @@
+@import '../style/color.scss';
+
+.cart {
+  padding-bottom: 6rem;
+
+  h1 {
+    font-family: 'Times new roman';
+    font-size: 5rem;
+    padding: 7rem 0;
+  }
+
+  .cart-container {
+    background: $white;
+    max-width: 94rem;
+    margin: 0 auto;
+    padding: 6rem;
+  }
+
+  .cart-table {
+    color: $silverChalice;
+    width: 100%;
+
+    thead {
+      color: $silverChalice;
+      border-bottom: $mercury solid 0.1rem;
+
+      tr th {
+        font-size: 1.4rem;
+        padding: 3rem 0;
+        text-align: left;
+      }
+    }
+
+    tfoot {
+      font-size: 1.4rem;
+      border-bottom: $mercury solid 0.1rem;
+    }
+  }
+
+  &.cart-popup {
+    padding-bottom: 0;
+
+    .cart-table {
+      thead {
+        display: none;
+      }
+      tfoot {
+        border-top: $mercury solid 0.1rem;
+        border-bottom: 0;
+      }
+    }
+
+    .cart-container {
+      padding: 1.5rem;
+    }
+  }
+}
+

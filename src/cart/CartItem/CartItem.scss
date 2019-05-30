@@ -1,0 +1,76 @@
+@import '../../style/color.scss';
+
+.cart-item {
+  border-bottom: $mercury solid 0.1rem;
+
+  td {
+    padding: 3rem 0 5rem 0;
+    vertical-align: top;
+  }
+
+  .cart-item__image {
+    width: 13rem;
+    margin-right: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .cart-item__brand {
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .cart-item__title {
+    color: $black;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .cart-item__quantity input {
+    background: $gallery;
+    border: none;
+    width: 5rem;
+    height: 5rem;
+    color: $boulder;
+    text-align: center;
+    margin-right: 0.2rem;
+  }
+
+  .cart-item__cta {
+    text-align: right;
+  }
+}
+
+.cart-popup {
+  .cart-item {
+    border-bottom: 0;
+
+    td {
+      padding: 1rem 0;
+    }
+
+    .cart-item__image {
+      width: 8rem;
+    }
+
+    .cart-item__brand {
+      margin-bottom: 0rem;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .cart-item__title {
+      font-size: 1.2rem; 
+      max-width: 24rem;
+      padding-right: 1rem; 
+      line-height: 1.7rem;    
+    }
+  }
+}
