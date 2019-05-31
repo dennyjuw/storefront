@@ -9,20 +9,18 @@ describe('Product', () => {
   beforeEach(() => {
     props = {
       match: {
-      	params: { id: 1 }      	
+      	params: { id: 1 }
       },
-      product: {
-      	product: []
-      }
+      product: []
     };
 
     propsNotEmpty = {
     	match: {
       	params: { id: 1 }
       },
-      product: {
-      	product: [{ id: 1, title: 'test product' }]
-      }
+      product: [
+        { id: 1, title: 'test product' }
+      ]
     };
   });
 
@@ -39,7 +37,7 @@ describe('Product', () => {
 
 	    // use propsNotEmpty to make sure fetchCategory is not called initially
 	    const wrapper = shallow(<ProductBase { ...propsNotEmpty } onFetchCategory={onFetchCategory} />);
-	    
+
 	    wrapper.instance().fetchCategory();
 
 	    expect(global.fetch).toHaveBeenCalledTimes(1);
@@ -65,12 +63,12 @@ describe('Product', () => {
 		  spy.mockClear()
 		});
 
-		it('should call fetchCategory when product is empty', () => {			
+		it('should call fetchCategory when product is empty', () => {
 			const wrapper = shallow(<ProductBase { ...props } />);
 			expect(spy).toHaveBeenCalled();
 		})
 
-		it('should not call fetchCategory when product is not empty', () => {			
+		it('should not call fetchCategory when product is not empty', () => {
 			const wrapper = shallow(<ProductBase { ...propsNotEmpty } />);
 			expect(spy).not.toHaveBeenCalled();
 		})
@@ -90,16 +88,16 @@ describe('Product', () => {
 			wrapper = shallow(<ProductBase { ...propsNotEmpty } />);
 		});
 
-		it('should increment product quantity in state', () => { 
+		it('should increment product quantity in state', () => {
 			wrapper.find('button#cta-button-increment').simulate('click', { preventDefault() {} });
 			expect(wrapper.state('total')).toEqual(2);
 
 			wrapper.setState({ total: '' });
 			wrapper.find('button#cta-button-increment').simulate('click', { preventDefault() {} });
-			expect(wrapper.state('total')).toEqual(1);						
+			expect(wrapper.state('total')).toEqual(1);
 		});
 
-		it('should decrement product quantity in state', () => { 
+		it('should decrement product quantity in state', () => {
 			wrapper.find('button#cta-button-increment').simulate('click', { preventDefault() {} });
 			wrapper.find('button#cta-button-increment').simulate('click', { preventDefault() {} });
 			wrapper.find('button#cta-button-decrement').simulate('click', { preventDefault() {} });

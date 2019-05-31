@@ -11,7 +11,7 @@ export class ProductBase extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...props.product,
+      product: props.product,
       id: props.match.params.id,
       productInfo: null,
       total: 1,
@@ -33,10 +33,10 @@ export class ProductBase extends Component {
       });
   }
 
-  componentWillMount() {    
-    if (this.state.product.length === 0) {      
+  componentWillMount() {
+    if (this.state.product.length === 0) {
       this.fetchCategory();
-    } else {      
+    } else {
       this.getProductInfo();
     }
   }

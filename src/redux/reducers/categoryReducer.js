@@ -1,11 +1,7 @@
-const CATEGORY_INITIAL_STATE = {
-  product: []
-};
+const CATEGORY_INITIAL_STATE = [];
 
 const storeAllProductInCategory = (state, action) => {
-  const newState = { ...state };
-  newState.product = action.payload;
-  return newState;
+  return action.payload;
 }
 
 function categoryReducer(state = CATEGORY_INITIAL_STATE, action) {
