@@ -2,6 +2,15 @@
 
 * Updated react-scripts for scss support.
 * Updated react and react-dom to support latest redux.
+* Running test with coverage could give empty coverage report
+  ```
+  npm test -- --coverage
+  ```
+  Please use this instead as alternative
+  ```
+  npm test -- --coverage --watchAll=false
+  ```
+  (https://github.com/facebook/create-react-app/issues/6888)
 
 ## ASSUMPTIONS
 * Font style, spacing, padding, colour might not match visual design.
