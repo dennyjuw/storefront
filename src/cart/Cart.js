@@ -35,9 +35,12 @@ class CartBase extends Component {
                 (cart.length === 0) ?
                   <tr><td colSpan="4" className="cart-item py-5">Shopping cart is empty</td></tr>
                   :
-                  (cart.map((productInCart, index) => (
-                    <CartItem product={productInCart} total={productInCart.total} type={ CONSTANT.CART_TYPE.POPUP } key={index} />
-                  )))
+                  (cart.map((productInCart, index) => {
+                    const product = { ...productInCart };
+                    return (
+                      <CartItem product={product} type={ CONSTANT.CART_TYPE.POPUP } key={index} />
+                    )
+                  }))
               }
             </tbody>
             <tfoot>
@@ -83,9 +86,12 @@ class CartBase extends Component {
                 (cart.length === 0) ?
                   <tr><td colSpan="4" className="cart-item py-5">Shopping cart is empty</td></tr>
                   :
-                  (cart.map((productInCart, index) => (
-                    <CartItem product={productInCart} total={productInCart.total} type={ CONSTANT.CART_TYPE.FULL } key={index} />
-                  )))
+                  (cart.map((productInCart, index) => {
+                    const product = { ...productInCart };
+                    return (
+                      <CartItem product={product} type={ CONSTANT.CART_TYPE.FULL } key={index} />
+                    )
+                  }))
               }
             </tbody>
             <tfoot>
