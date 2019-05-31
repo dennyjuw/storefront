@@ -66,15 +66,16 @@ export class ProductBase extends Component {
   }
 
   addToCart = event => {
-    if (Number.isInteger(this.state.total)) {
-      this.props.onAddToCart(this.state.productInfo, this.state.total);
+    const re = /^[0-9\b]+$/;
+    if (re.test(this.state.total)) {
+       this.props.onAddToCart(this.state.productInfo, this.state.total);
     }
   }
 
   onChange = event => {
     const re = /^[0-9\b]+$/;
     if (event.target.value === '' || re.test(event.target.value)) {
-       this.setState({ total: event.target.value })
+       this.setState({ total: parseInt(event.target.value, 10) })
     }
   };
 

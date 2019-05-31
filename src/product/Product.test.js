@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { ProductBase } from './Product';
+import configureMockStore from 'redux-mock-store';
+import Product, { ProductBase } from './Product';
 
 describe('Product', () => {
 	let props;
@@ -117,4 +118,19 @@ describe('Product', () => {
 		wrapper.find('button.cta-button--primary').simulate('click', { preventDefault() {} });
 		expect(onAddToCart).toHaveBeenCalled();
 	});
+
+  describe('connected component', () => {
+    const mockStore = configureMockStore();
+    const initialState = { product: [{ id: 1, title: 'test product mock'}] };
+    let store;
+
+    beforeEach(() => {
+      store = mockStore(initialState);
+    });
+
+    it('should map state from mapStateToProps', () => {
+      const wrapper = shallow(<Product store={ store }/>);
+      expect(wrapper.props().children.props.product).toEqual([{ id: 1, title: 'test product mock'}]);
+    });
+  });
 });

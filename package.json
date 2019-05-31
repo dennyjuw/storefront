@@ -23,7 +23,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "redux-mock-store": "^1.5.3"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
